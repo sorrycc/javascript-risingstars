@@ -52,7 +52,7 @@ export const PageRoot = ({
       <div className="main">
         <div className="main-contents">
           <TableOfContents projects={projectsByTag} categories={categories} />
-          {categories
+          {/* {categories
             .filter((category) => !category.disabled)
             .map((category) => (
               <Category
@@ -63,7 +63,7 @@ export const PageRoot = ({
                 projectsByTag={projectsByTag}
                 tags={tags}
               />
-            ))}
+            ))} */}
           <Conclusion />
         </div>
       </div>
