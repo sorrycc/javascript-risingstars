@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Header } from "components/header";
 import { Top } from "components/top/top";
 import { TableOfContents } from "components/table-of-contents";
-import { Category } from "components/category";
+// import { Category } from "components/category";
 import { Conclusion } from "components/conclusion";
 import { TranslatorSection } from "components/translator-section";
 import { Footer } from "components/footer";
@@ -21,7 +21,7 @@ export const PageRoot = ({
   allYears,
   categories,
   languages,
-  tags,
+  // tags,
 }: Props) => {
   const intl = useIntl();
   const language = intl.locale;
