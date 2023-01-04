@@ -24,7 +24,7 @@ export const ProjectDetails = ({ project, isOpen, tags, year }: Props) => {
             values={{ year }}
           />
         </Heading>
-        <ProjectChart project={project} />
+        {false && <ProjectChart project={project} />}
         <Heading>
           <FormattedMessage
             id="common.view_project.data"
