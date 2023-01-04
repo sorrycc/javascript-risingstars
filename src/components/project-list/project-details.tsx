@@ -24,7 +24,7 @@ export const ProjectDetails = ({ project, isOpen, tags, year }: Props) => {
             values={{ year }}
           />
         </Heading>
-        {false && <ProjectChart project={project} />}
+        <ProjectChart project={project} />
         <Heading>
           <FormattedMessage
             id="common.view_project.data"
@@ -32,15 +32,17 @@ export const ProjectDetails = ({ project, isOpen, tags, year }: Props) => {
           />
         </Heading>
         <DataList>
-          <DataListItem
-            label={
-              <FormattedMessage
-                id="common.view_project.created"
-                defaultMessage={`Created`}
-              />
-            }
-            data={templateMonthYear.render(new Date(project.created_at))}
-          />
+          {false && (
+            <DataListItem
+              label={
+                <FormattedMessage
+                  id="common.view_project.created"
+                  defaultMessage={`Created`}
+                />
+              }
+              data={templateMonthYear.render(new Date(project.created_at))}
+            />
+          )}
           <DataListItem
             label={
               <FormattedMessage
