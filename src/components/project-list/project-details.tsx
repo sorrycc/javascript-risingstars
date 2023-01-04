@@ -1,10 +1,7 @@
-import tinytime from "tinytime";
 import { FormattedMessage } from "react-intl";
 
 import { ProjectChart } from "./project-chart";
 import { formatStarNumber } from "./project-shared";
-
-const templateMonthYear = tinytime("{YYYY}/{Mo}");
 
 type Props = {
   project: RisingStars.Project;
@@ -32,17 +29,15 @@ export const ProjectDetails = ({ project, isOpen, tags, year }: Props) => {
           />
         </Heading>
         <DataList>
-          {false && (
-            <DataListItem
-              label={
-                <FormattedMessage
-                  id="common.view_project.created"
-                  defaultMessage={`Created`}
-                />
-              }
-              data={templateMonthYear.render(new Date(project.created_at))}
-            />
-          )}
+          <DataListItem
+            label={
+              <FormattedMessage
+                id="common.view_project.created"
+                defaultMessage={`Created`}
+              />
+            }
+            data={<>{formatProjectCreationDate(project)}</>}
+          />
           <DataListItem
             label={
               <FormattedMessage
@@ -206,6 +201,12 @@ const DataListItem = ({ label, data }) => {
     </li>
   );
 };
+
+function formatProjectCreationDate(project: RisingStars.Project) {
+  const date = project.created_at;
+  const yearAndMonth = date.slice(0, 7); // TODO format using i18n
+  return yearAndMonth;
+}
 
 // Format a URL to be displayed, removing `http://` and trailing `/`
 function formatURL(url: string) {
