@@ -36,14 +36,16 @@ export const Category = ({
         <div className={`${hasComment ? "project-category-grid" : ""}`}>
           <div>
             <div className={`${hasComment ? "column1" : ""}`}>
-              <ProjectList
-                count={count}
-                limit={limit || 5}
-                tagKey={key}
-                tags={tags}
-                projects={graphProjects}
-                year={year}
-              />
+              {false && (
+                <ProjectList
+                  count={count}
+                  limit={limit || 5}
+                  tagKey={key}
+                  tags={tags}
+                  projects={graphProjects}
+                  year={year}
+                />
+              )}
             </div>
           </div>
           <div>
